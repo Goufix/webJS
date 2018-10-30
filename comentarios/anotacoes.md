@@ -3,7 +3,7 @@ Evitar comentário idiota\
 Comentar tudo que for necessário durante o curso.\
 #Nomenclaturas
 Ser claro nas nomenclaturas\
-Não usar nome genérico ou sigla.\
+Não usar nome genérico ou sigla.
 ```javascript 
 let valor = ''
 let numero = 3
