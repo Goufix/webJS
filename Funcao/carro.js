@@ -1,18 +1,34 @@
-function carro (maxSpeed = 200, delta = 5) {
+function carro(maxSpeed = 200, delta = 5) {
   let currentSpeed = 0
   this.accelerate = () => {
-    if(delta <= 5) console.log('...')
-    else if(delta <= 15) console.log('Vrum')
-    else if(delta <= 50 ) console.log('Vruuum')
-    else if(delta > 50) console.log('ZUUUUUUUUUUUUUUUUM')
-    if(currentSpeed + delta < maxSpeed) {
+    if (delta <= 5) {
+
+      console.log('...')
+
+    } else if (delta <= 15) {
+
+      console.log('Vrum')
+    
+    }
+    else if (delta <= 50) {
+      
+      console.log('Vruuum')
+
+    } else if (delta > 50) {
+
+      console.log('ZUUUUUUUUUUUUUUUUM')
+      
+    }
+    if (currentSpeed + delta < maxSpeed) {
       currentSpeed += delta
     } else {
       currentSpeed = maxSpeed
     }
   }
   this.break = () => {
-    if(currentSpeed - delta > 0) currentSpeed -= delta 
+    if (currentSpeed - delta > 0) {
+      currentSpeed -= delta
+    }
     else currentSpeed = 0
   }
   this.getCurrentSpeed = () => currentSpeed
