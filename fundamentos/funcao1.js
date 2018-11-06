@@ -5,7 +5,7 @@ function somar (a, b) {
 
 somar(1, 2)
 somar(12)
-somar(1, 2, 3, 4, 5) // Eu estou falando dessa linha
+somar(1, 2, 3, 4, 5)
 
 // Função com retorno
 console.log('=======================')
