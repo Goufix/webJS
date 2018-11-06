@@ -1,44 +1,38 @@
-function carro(maxSpeed = 200, delta = 5) {
+function car (maxSpeed = 200, delta = 5) {
   let currentSpeed = 0
+
   this.accelerate = () => {
     if (delta <= 5) {
-
       console.log('...')
-
     } else if (delta <= 15) {
-
-      console.log('Vrum')
-    
-    }
-    else if (delta <= 50) {
-      
+      console.log('Vrum') 
+    } else if (delta <= 50) {
       console.log('Vruuum')
-
     } else if (delta > 50) {
-
       console.log('ZUUUUUUUUUUUUUUUUM')
-      
     }
-    if (currentSpeed + delta < maxSpeed) {
+
+    if (currentSpeed + delta < maxSpeed) 
       currentSpeed += delta
-    } else {
+      return
+
       currentSpeed = maxSpeed
     }
-  }
   this.break = () => {
     if (currentSpeed - delta > 0) {
       currentSpeed -= delta
+      return
     }
-    else currentSpeed = 0
+    currentSpeed = maxSpeed
   }
   this.getCurrentSpeed = () => currentSpeed
 }
 
-const uno = new carro(150, 5)
+const uno = new car(150, 5)
 
-const unoComEscada = new carro(500, 30)
+const unoComEscada = new car(500, 30)
 
-const unoComEscadaELogoDaGVT = new carro(10000, 100)
+const unoComEscadaELogoDaGVT = new car(10000, 100)
 
 uno.accelerate()
 console.log(`Velocidade atual do uno: ${uno.getCurrentSpeed()}`)
