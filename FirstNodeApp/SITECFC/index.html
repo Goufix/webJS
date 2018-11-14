@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<style type="text/css">
+	@import url("styles.css");
+</style>	
+<script>
+
+var texto = ''
+var result
+var count = 0
+function inserir(letra) {
+	result.innerHTML += letra
+  count++
+  if(count < string.length)
+    window.setTimeout(function() { inserir(string[count]) }, 200)
+}
+
+var tittleString = 'Seja bem-vindo ao Curso de Formação de Cabos'
+var string1 = 'Este é o site de auxilio do Curso de Formação de Cabos'
+var string2 = 'Nos próximos passos, você irá aprender como criar uma conta no fórum da RCC e também vai aprender a conferir TAGs dos policiais.'
+var string3 = 'Leia todo o conteúdo com atenção e lembre-se de que o instrutor está no habbo te esperando, portanto, evite ficar ausente (dormir) e lembre-se de chama-lo caso precise de ajuda.'
+var string4 = 'Para lhe explicar isso, ofereço duas opções, escolha uma abaixo.'
+
+function write(id, string) {
+	result = document.getElementById(id)
+	window.setTimeout(function() { inserir(string[count]) }, 200)
+	
+}
+
+function load() {
+write('tittle', tittleString)
+write('string1', string1)
+write('string2', string2)
+write('string3', string3)
+write('string4', string4)
+}
+</script>
+	<title>Curso de Formação de Cabos</title>
+</head>
+<body onload = "load()"
+>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8" style="text-align: center">
+			<h1 font-color: #0C70A3 id="tittle"></h1>
+			<hr>
+			<br/>
+			<p id="string1"></p>
+			<p id="string2"></p>
+			<p id="string3"></p>
+			<p id="string4"></p>
+		<div class="button1" style="float: left">
+			<a href="video.php"> <!-- <img src="img/video.jpg"> !--> Video</a>
+		</div>
+		<div class="button2" style="float: right">
+			<a href="texto.html"><!-- <img src="img/texto.jpg">!-->Texto</a>
+		</div>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+	<div id="footer">
+		<p> Goufix, 2017. Todos os direitos reservados </p>
+	</div> 
+
+	</div>
+<div calss="col-sm-2"></div>
+</div>
+</div>
+<br/>
+<br/>
+</body>
+</html>

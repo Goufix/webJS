@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Curso de JavaScript</title>
+        <script>
+        var objetos = ['cadeira', 'impressora', 'garfo']
+        function adicionar() {
+            var valor = document.getElementById('campoTexto').value
+            if(valor === '') {
+                alert('Informe um valor válido')
+            } else {
+                if(objetos.indexOf(valor) === -1) {
+                    objetos.push(valor)
+                    document.getElementById('campoTexto').value = ''
+                    console.log(objetos)
+                } else {
+                    alert('Item já existente')
+                }
+            }
+        }
+        function ordenar() {
+            objetos.sort();
+            console.log(objetos)
+        }
+
+        </script>
+    </head>
+    <body>
+        <input id="campoTexto" type="text">
+        <button type="button" onclick="adicionar()">Adicionar</button>
+        <button type="button" onclick="ordenar()">Ordenar</button>
+    </body>
+</html>

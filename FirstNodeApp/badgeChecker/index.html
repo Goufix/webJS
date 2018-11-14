@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Verificar Emblema - RCC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    <form action="" >
+        <input type="text" id="username"/>
+        <button id="verify"> Verificar </button> 
+    </form>
+    <script>
+            var nick = undefined
+            $(document).ready(function() {
+            $("verify").click(nick = $('username').val) 
+            }
+         (async () => { await checkProfile(nick)})()
+          async function checkProfile (username) {
+            const BASE_URI = 'https://www.habbo.com.br/api/public/users'
+            const BADGE_CODE = 'ACH_Name1'
+            
+            let userdata, badges
+          
+            try {
+              const request = await fetch(`${BASE_URI}?name=${username}`)
+              userdata = await request.json()
+            } catch (e) {
+              return void console.log(`[STATUS] O usuário ${username} não existe.`)
+            }
+          
+            try {
+              const request = await fetch(`${BASE_URI}/${userdata.uniqueId}/badges`)
+              badges = await request.json()
+          
+              if (badges.findIndex(({ code }) => code === BADGE_CODE) === -1) {
+                return void console.log(`[STATUS] O usuário ${username} nunca trocou o nick.`)
+              }
+            
+              return void console.warn(`[STATUS] O usuário ${username} já trocou de nick`)
+             } catch (e) {
+              return void console.error(`[STATUS] O usuário ${username} tem as opções de privacidade ativadas.`)
+            }
+        }
+        
+                </script>
+</body>
+</html>

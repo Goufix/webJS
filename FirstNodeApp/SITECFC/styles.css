@@ -1,0 +1,25 @@
+.total { 
+text-align: center;
+align-self: center;
+border: 1px solid black;
+background-color: hsl(0, 0% , 99%);
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16);
+}
+
+.total #centro { 
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16);
+align-self: center;
+align-content: center;
+border: 2px solid hsl(0, 0%, 80%);
+ 
+ }
+ p {
+ 	text-align: center;
+ }
+.total h1 { 
+text-align: center;
+font-color: "#24278F";
+}
+#footer { 
+font-size: 12px;
+ }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Curso de JavaScript</title>
+        <script src="script.js"></script>
+        <style> 
+        .green {
+            background: #00ff00;
+        }
+        .red {
+            background: #FF0000;
+        }
+        .yellow {
+            background: #FFF000;
+        }
+        
+        </style>
+        <script> 
+        function changeColor(color) {
+                document.getElementById('input1').className = color        
+        }
+        function conditionalColor() {
+            if(document.getElementById('input1').value.length < 3) {
+                changeColor('red')
+            }
+            if(document.getElementById('input1').value.length > 3) {
+                changeColor('green')
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <input type="text" class="padrao" id="input1" onfocus="changeColor('yellow')" onblur="conditionalColor()">
+    </body>
+</html>

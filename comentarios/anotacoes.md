@@ -92,5 +92,23 @@ dobro = (a) => {
     return 2 * a
 }
 ```
+#ConstructionFunction
+```javascript
+function car (maxSpeed = 0, delta = 0) {
+ let currentSpeed = 0
+ // A notação "this" cria uma ação pública (Método)
+ // Definir variáveis dentro do escopo faz com que sejam elementos privados.
+    this.accelerate = () => {
+        if (currentSpeed + delta < maxSpeed) {
+        currentSpeed += delta
+        return
+        } 
+    }
 
+    currentSpeed = maxSpeed
+ /* 
+ Lógica do objeto...
+ */
+}
+```
 ### ----------------------------------------------- 
